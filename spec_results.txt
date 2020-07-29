@@ -1,0 +1,149 @@
+I, [2020-07-29T18:36:57.103424 #12878]  INFO -- : Creating symlink from spec/fixtures/modules/rspec_test to /home/jbond/git/rspec_test
+/usr/bin/ruby2.5 -I/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/lib:/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-support-3.8.0/lib /home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/exe/rspec --pattern spec/\{aliases,classes,defines,functions,hosts,integration,plans,tasks,type_aliases,types,unit\}/\*\*/\*_spec.rb
+Run options: exclude {:bolt=>true}
+
+rspec_test
+  test
+    should compile into a catalogue without dependency cycles
+  should have exported resources
+    should contain Nagios_host[confined] (FAILED - 1)
+    should contain Nagios_host[unconfined]
+
+Failures:
+
+  1) rspec_test should have exported resources should contain Nagios_host[confined]
+     Failure/Error: it { is_expected.to contain_nagios_host('confined') }
+       expected that the catalogue would contain Nagios_host[confined]
+     # ./spec/classes/rspec_test_spec.rb:9:in `block (3 levels) in <top (required)>'
+
+Deprecation Warnings:
+
+puppetlabs_spec_helper: defaults `mock_with` to `:mocha`. See https://github.com/puppetlabs/puppetlabs_spec_helper#mock_with to choose a sensible value for you
+
+
+If you need more of the backtrace for any of these deprecations to
+identify where to make the necessary changes, you can configure
+`config.raise_errors_for_deprecations!`, and it will turn the
+deprecation warnings into errors, giving you the full backtrace.
+
+1 deprecation warning total
+
+Finished in 0.2276 seconds (files took 1.17 seconds to load)
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/classes/rspec_test_spec.rb:9 # rspec_test should have exported resources should contain Nagios_host[confined]                                                                                                    
+
+/usr/bin/ruby2.5 -I/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/lib:/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-support-3.8.0/lib /home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/exe/rspec --pattern spec/\{aliases,classes,defines,functions,hosts,integration,plans,tasks,type_aliases,types,unit\}/\*\*/\*_spec.rb failed
+git/rspec_test [ bspec                                                                      master * ] 6:36 PM
+I, [2020-07-29T18:38:20.280177 #13088]  INFO -- : Creating symlink from spec/fixtures/modules/rspec_test to /home/jbond/git/rspec_test
+/usr/bin/ruby2.5 -I/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/lib:/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-support-3.8.0/lib /home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/exe/rspec --pattern spec/\{aliases,classes,defines,functions,hosts,integration,plans,tasks,type_aliases,types,unit\}/\*\*/\*_spec.rb
+Run options: exclude {:bolt=>true}
+
+rspec_test
+  test
+    should compile into a catalogue without dependency cycles (FAILED - 1)
+  should have exported resources
+    should contain Nagios_host[confined] (FAILED - 2)
+    should contain Nagios_host[unconfined]
+
+rspec_test
+  test
+    should compile into a catalogue without dependency cycles (FAILED - 3)
+  should have exported resources
+    should contain Nagios_host[confined] (FAILED - 4)
+    should contain Nagios_host[unconfined]
+
+Failures:
+
+  1) rspec_test test should compile into a catalogue without dependency cycles
+     Failure/Error: it { is_expected.to compile.with_all_deps }
+     
+     ArgumentError:
+       Could not find terminus puppetdb for indirection catalog
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:336:in `make_terminus'                                                                                                              
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:119:in `terminus'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/store_configs.rb:6:in `initialize'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:338:in `new'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:338:in `make_terminus'                                                                                                              
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:119:in `terminus'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:39:in `cache'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:200:in `find'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:84:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:162:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:204:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:407:in `build_catalog_without_cache'                                                                                                   
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:418:in `block in build_catalog'                                                                                                        
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/cache.rb:17:in `get'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:417:in `build_catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:88:in `block in load_catalogue'                                                                                                        
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:368:in `with_vardir'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:81:in `load_catalogue'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/example/class_example_group.rb:7:in `catalogue'                                                                                                   
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:10:in `block in subject'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/matchers/compile.rb:23:in `matches?'                                                                                                              
+     # ./spec/classes/rspec_test_force_spec.rb:5:in `block (3 levels) in <top (required)>'
+
+  2) rspec_test should have exported resources should contain Nagios_host[confined]
+     Failure/Error: it { is_expected.to contain_nagios_host('confined') }
+       expected that the catalogue would contain Nagios_host[confined]
+     # ./spec/classes/rspec_test_force_spec.rb:10:in `block (3 levels) in <top (required)>'
+
+  3) rspec_test test should compile into a catalogue without dependency cycles
+     Failure/Error: it { is_expected.to compile.with_all_deps }
+     
+     ArgumentError:
+       Could not find terminus puppetdb for indirection catalog
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:336:in `make_terminus'                                                                                                              
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:119:in `terminus'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/store_configs.rb:6:in `initialize'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:338:in `new'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:338:in `make_terminus'                                                                                                              
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:119:in `terminus'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:39:in `cache'
+     # ./.bundle/vendor/ruby/2.5.0/gems/puppet-6.4.0/lib/puppet/indirector/indirection.rb:200:in `find'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:84:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:162:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/adapters.rb:204:in `catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:407:in `build_catalog_without_cache'                                                                                                   
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:418:in `block in build_catalog'                                                                                                        
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/cache.rb:17:in `get'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:417:in `build_catalog'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:88:in `block in load_catalogue'                                                                                                        
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:368:in `with_vardir'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:81:in `load_catalogue'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/example/class_example_group.rb:7:in `catalogue'                                                                                                   
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/support.rb:10:in `block in subject'
+     # ./.bundle/vendor/ruby/2.5.0/gems/rspec-puppet-2.7.3/lib/rspec-puppet/matchers/compile.rb:23:in `matches?'                                                                                                              
+     # ./spec/classes/rspec_test_spec.rb:5:in `block (3 levels) in <top (required)>'
+
+  4) rspec_test should have exported resources should contain Nagios_host[confined]
+     Failure/Error: it { is_expected.to contain_nagios_host('confined') }
+       expected that the catalogue would contain Nagios_host[confined]
+     # ./spec/classes/rspec_test_spec.rb:9:in `block (3 levels) in <top (required)>'
+
+Deprecation Warnings:
+
+puppetlabs_spec_helper: defaults `mock_with` to `:mocha`. See https://github.com/puppetlabs/puppetlabs_spec_helper#mock_with to choose a sensible value for you
+
+
+If you need more of the backtrace for any of these deprecations to
+identify where to make the necessary changes, you can configure
+`config.raise_errors_for_deprecations!`, and it will turn the
+deprecation warnings into errors, giving you the full backtrace.
+
+1 deprecation warning total
+
+Finished in 0.1992 seconds (files took 1.18 seconds to load)
+6 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/classes/rspec_test_force_spec.rb:5 # rspec_test test should compile into a catalogue without dependency cycles
+rspec ./spec/classes/rspec_test_force_spec.rb:10 # rspec_test should have exported resources should contain Nagios_host[confined]
+rspec ./spec/classes/rspec_test_spec.rb:5 # rspec_test test should compile into a catalogue without dependency cycles
+rspec ./spec/classes/rspec_test_spec.rb:9 # rspec_test should have exported resources should contain Nagios_host[confined]
+
+/usr/bin/ruby2.5 -I/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/lib:/home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-support-3.8.0/lib /home/jbond/git/rspec_test/.bundle/vendor/ruby/2.5.0/gems/rspec-core-3.8.0/exe/rspec --pattern spec/\{aliases,classes,defines,functions,hosts,integration,plans,tasks,type_aliases,types,unit\}/\*\*/\*_spec.rb failed
+
